@@ -1,0 +1,28 @@
+Introduction:
+The dataset features 15 different classes of Human Activities.
+The dataset contains about 12k+ labelled images including the validation images.
+Each image has only one human activity category and are saved in separate folders of the labelled classes
+
+PROBLEM STATEMENT:
+Human Action Recognition (HAR) aims to understand human behavior and assign a label to each action. It has a wide range of applications,
+ and therefore has been attracting increasing attention in the field of computer vision. Human actions can be represented using various data modalities,
+ such as RGB, skeleton, depth, infrared, point cloud, event stream, audio, acceleration, radar, and WiFi signal, which encode different sources of useful yet
+ distinct information and have various advantages depending on the application scenarios.
+
+Consequently, lots of existing works have attempted to investigate different types of approaches for HAR using various modalities.
+Your Task is to build an Image Classification Model using CNN that classifies to which class of activity a human is performing.
+
+About Files:
+Train - contains all the images that are to be used for training your model. In this folder you will find 15 folders namely - 'calling', ’clapping’,
+ ’cycling’, ’dancing’, ‘drinking’, ‘eating’, ‘fighting’, ‘hugging’, ‘laughing’, ‘listeningtomusic’, ‘running’, ‘sitting’, ‘sleeping’, texting’, ‘using_laptop’
+ which contain the images of the respective human activities.
+
+Test - contains 5400 images of Human Activities. For these images you are required to make predictions as the respective class names -'calling',
+ ’clapping’, ’cycling’, ’dancing’, ‘drinking’, ‘eating’, ‘fighting’, ‘hugging’, ‘laughing’, ‘listeningtomusic’, ‘running’, ‘sitting’, ‘sleeping’, texting’, ‘using_laptop’.
+
+Testing_set.csv - this is the order of the predictions for each image that is to be submitted on the platform. Make sure the predictions you download are with their
+ image’s filename in the same order as given in this file.
+s
+
+sample_submission: This is a csv file that contains the sample submission for the data sprint.
+
