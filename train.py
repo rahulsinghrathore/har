@@ -28,7 +28,7 @@ from azureml.core.model import Model as azure_model
 ws = Workspace(
     subscription_id = "88ffd436-6b2f-4a5c-942f-72cc66d5bfab",
     resource_group = "aarav_resources",
-    workspace_name = "aaravworkspace5879869960",
+    workspace_name = "aarav_workspace",
 )
 
 
@@ -78,7 +78,7 @@ run = Run.get_context()
 
 # vgg_model.summary()
 
-history = vgg_model.fit(img_dta,y_train, epochs=25)
+history = vgg_model.fit(img_dta,y_train, epochs=1)
 
 #saving
 
