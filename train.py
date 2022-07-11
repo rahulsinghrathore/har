@@ -20,7 +20,7 @@ from tensorflow.keras.utils import to_categorical
 
 from azureml.core.workspace import Workspace
 from azureml.core.run import Run
-# from azureml.core.dataset import Dataset
+from azureml.core.dataset import Dataset
 from azureml.core.model import Model as azure_model
 
 
@@ -30,14 +30,15 @@ ws = Workspace(
     resource_group = "aarav_resources",
     workspace_name = "aarav_workspace",
 )
+dataset = Dataset.get_by_name(ws, name='har')
+dataset.download(target_path='.', overwrite=False)
+
+train_csv=pd.read_csv("Training_set.csv")
+test_csv=pd.read_csv("Testing_set.csv")
 
 
-train_csv=pd.read_csv("Human Action Recognition data/Training_set.csv")
-test_csv=pd.read_csv("Human Action Recognition data/Testing_set.csv")
-
-
-train_fol=glob.glob('Human Action Recognition data/Train/*')
-test_fol=glob.glob('Human Action Recognition data/Test/*')
+train_fol=glob.glob('Train/*')
+test_fol=glob.glob('Test/*')
 
 
 filename= train_csv['filename']
@@ -47,7 +48,7 @@ img_data=[]
 img_label=[]
 lenght=len(train_fol)
 for i in range(len(train_fol)-1):
-    t='Human Action Recognition data/Train/' + filename[i]
+    t='Train/' + filename[i]
     temp_img=Image.open(t)
     img_data.append(np.asarray(temp_img.resize((160,160))))
     img_label.append(action[i])

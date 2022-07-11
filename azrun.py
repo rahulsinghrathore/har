@@ -17,8 +17,8 @@ ws = Workspace(
 
 ct = ComputeTarget(workspace=ws, name="aaravCompute")
 # env = Environment.get(workspace=ws, name="tf_env")
-env = Environment.from_conda_specification(name='env', file_path='./deployment/tf_env.yml')
-docker_config = DockerConfiguration(use_docker=False)
+env = Environment.from_conda_specification(name='env', file_path='./deployment/ENV.yml')
+docker_config = DockerConfiguration(use_docker=True)
 src = ScriptRunConfig(
     source_directory=".",
     script="train.py",
